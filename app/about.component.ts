@@ -5,5 +5,5 @@ import {Component} from 'angular2/core';
   templateUrl: 'app/about.component.html'
 })
 export class AboutComponent {
-  title: 'About mek ds dl dlsd msl dlsj dlksj';
+  title = 'About mek ds dl dlsd msl dlsj dlksj';
 }
