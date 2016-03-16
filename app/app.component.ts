@@ -4,7 +4,7 @@ import {AboutComponent} from './about.component';
 
 @Component({
   selector: 'my-resume',
-  templateUrl: './app.component.html',
+  templateUrl: './app/app.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent { }
