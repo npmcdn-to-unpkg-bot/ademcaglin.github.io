@@ -13,7 +13,15 @@
 </table>
 
 <script type="text/babel">
-
+class ObjectRows extends React.Component {
+  render() {
+    return <tbody>
+        {[...Array(5)].map((x, i) =>
+          <ObjectRow key={i + 1} index={i + 1} />
+        )}
+    </tbody>
+  }
+}
 class ObjectRow extends React.Component {
   render() {
     return(
