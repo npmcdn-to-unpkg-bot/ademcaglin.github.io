@@ -15,6 +15,7 @@
 <script type="text/babel">
 class ObjectRows extends React.Component {
   render() {
+    return
     <tbody>
         {[...Array(5)].map((x, i) =>
           <ObjectRow key={i + 1} index={i + 1} />
@@ -24,6 +25,7 @@ class ObjectRows extends React.Component {
 }
 class ObjectRow extends React.Component {
   render() {
+    return
     <tr>
       <td>{this.props.index}</td>
     </tr>
