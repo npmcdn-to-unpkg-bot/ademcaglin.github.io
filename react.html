@@ -13,29 +13,22 @@
 </table>
 
 <script type="text/babel">
-
-
-var ObjectRows = React.createClass({
-  render: function () {
-    return (
-      <tbody>
+class ObjectRows extends React.Component {
+  render() {
+    <tbody>
         {[...Array(10)].map((x, i) =>
           <ObjectRow key={i + 1} index={i + 1} />
         )}
-      </tbody>
-    );
-  },
-});
-
-var ObjectRow = React.createClass({
-  render: function () {
-    return (
-      <tr>
+    </tbody>
+  }
+}
+class ObjectRow extends React.Component {
+  render() {
+    <tr>
       <td>{this.props.index}</td>
-      </tr>
-    );
-  },
-});
+    </tr>
+  }
+}
 
 React.render(<ObjectRows />, document.getElementById('object-rows'));
 </script>
