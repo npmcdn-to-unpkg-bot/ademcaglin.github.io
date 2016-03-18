@@ -14,12 +14,24 @@
 
 <script type="text/babel">
 class ObjectRows extends React.Component {
+  getInitialState(){
+    
+  }
+  getInitialState(){
+    fetch('https://api.github.com/users/ademcaglin').then(function(response) { 
+  	   return response.json();
+    }).then(function(j) {
+        console.log(JSON.stringify(j));
+      });
+  }
   render() {
-    return <tbody>
+    return(
+    <img src="" alt="avatar">
+    <tbody>
         {[...Array(5)].map((x, i) =>
           <ObjectRow key={i + 1} index={i + 1} />
         )}
-    </tbody>
+    </tbody>)
   }
 }
 class ObjectRow extends React.Component {
