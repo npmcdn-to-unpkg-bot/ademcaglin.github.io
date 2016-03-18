@@ -15,9 +15,6 @@
 <script type="text/babel">
 class ObjectRows extends React.Component {
   getInitialState(){
-    
-  }
-  getInitialState(){
     fetch('https://api.github.com/users/ademcaglin').then(function(response) { 
   	   return response.json();
     }).then(function(j) {
