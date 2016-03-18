@@ -8,28 +8,43 @@
 
 <body>
 
-<table id="object-rows">
+<div id="object-rows">
 
-</table>
+</div>
 
 <script type="text/babel">
 class ObjectRows extends React.Component {
   constructor(props) {
     super(props);
-    fetch('https://api.github.com/users/ademcaglin').then(function(response) { 
+    this.state = {avatar_url: ''};
+  }
+  loadUserInfo(){
+    var full = window.location.host;
+    var parts = full.split('.');
+    var sub = parts[0];
+    var apiUrl= 'https://api.github.com/users/' + sub;
+    fetch(apiUrl).then(function(response) { 
   	   return response.json();
     }).then(function(data) {
-        this.state = {avatar_url: data.avatar_url};
+        this.setState({avatar_url: data.avatar_url});
         console.log(JSON.stringify(data));
-      });
+      }.bind(this));
+  }
+  componentDidMount() {
+     this.loadUserInfo();
   }
   render() {
     return(
-    <tbody>
-        {[...Array(5)].map((x, i) =>
+    <div>
+    <img src={this.state.avatar_url} />
+    <table>
+     <tbody>
+         {[...Array(5)].map((x, i) =>
           <ObjectRow key={i + 1} index={i + 1} />
-        )}
-    </tbody>
+         )}
+     </tbody>
+    </table>
+    </div>
     )
   }
 }
