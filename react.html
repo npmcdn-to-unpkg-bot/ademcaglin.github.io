@@ -23,12 +23,12 @@ class ObjectRows extends React.Component {
   }
   render() {
     return(
-    <img src="" alt="avatar">
     <tbody>
         {[...Array(5)].map((x, i) =>
           <ObjectRow key={i + 1} index={i + 1} />
         )}
-    </tbody>)
+    </tbody>
+    )
   }
 }
 class ObjectRow extends React.Component {
