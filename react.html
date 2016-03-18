@@ -14,7 +14,8 @@
 
 <script type="text/babel">
 class ObjectRows extends React.Component {
-  constructor(){
+  constructor(props) {
+    super(props);
     fetch('https://api.github.com/users/ademcaglin').then(function(response) { 
   	   return response.json();
     }).then(function(j) {
