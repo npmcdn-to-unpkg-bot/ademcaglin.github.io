@@ -18,12 +18,14 @@ class ObjectRows extends React.Component {
     super(props);
     fetch('https://api.github.com/users/ademcaglin').then(function(response) { 
   	   return response.json();
-    }).then(function(j) {
-        console.log(JSON.stringify(j));
+    }).then(function(data) {
+        this.setState({ avatar_url: data.avatar_url });
+        console.log(JSON.stringify(data));
       });
   }
   render() {
     return(
+    <img src="{this.state.avatar_url}" />
     <tbody>
         {[...Array(5)].map((x, i) =>
           <ObjectRow key={i + 1} index={i + 1} />
