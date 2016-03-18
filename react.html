@@ -19,7 +19,7 @@ class ObjectRows extends React.Component {
     fetch('https://api.github.com/users/ademcaglin').then(function(response) { 
   	   return response.json();
     }).then(function(data) {
-        this.setState({ avatar_url: data.avatar_url });
+        this.state = {avatar_url: data.avatar_url};
         console.log(JSON.stringify(data));
       });
   }
