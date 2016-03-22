@@ -1,0 +1,14 @@
+<div id="photo-header" class="text-center">
+  <div id="photo">
+    <img src={{avatar_url}} />
+  </div>
+  <div id="text-header">
+    <h1>{{fullname}}</h1>
+    <button *ngIf="!_authService.authenticated" class="btn btn-xs" (click)="signInWithGithub()" type="button">
+      GitHub
+    </button>
+    <button *ngIf="_authService.authenticated" class="btn btn-xs btn-danger" type="button">
+      GitHub
+    </button>
+  </div>
+</div>

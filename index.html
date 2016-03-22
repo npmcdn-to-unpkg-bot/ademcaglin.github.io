@@ -1,8 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        Hello
-    </body>
-</html>    
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- IE required polyfills, in this exact order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://npmcdn.com/angular2@2.0.0-beta.11/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="https://code.angularjs.org/2.0.0-beta.11/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://npmcdn.com/typescript@1.8.9/lib/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.11/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.11/angular2.dev.js"></script>
+
+    <script src="https://code.angularjs.org/2.0.0-beta.11/http.dev.js"></script>
+
+    <script src="https://npmcdn.com/a2-in-memory-web-api/web-api.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+  <script>
+    System.config({
+      transpiler: 'typescript',
+      typescriptOptions: {
+        emitDecoratorMetadata: true
+      },
+      packages: {
+        'app': {
+          defaultExtension: 'ts'
+        }
+      }
+    });
+    System.import('app/boot')
+      .then(null, console.error.bind(console));
+  </script>
+</head>
+
+<body>
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <header></header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-7">
+      cv
+    </div>
+    <div class="col-xs-12 col-sm-5">
+     c
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
